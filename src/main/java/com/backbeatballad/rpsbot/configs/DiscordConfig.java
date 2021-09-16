@@ -1,6 +1,5 @@
 package com.backbeatballad.rpsbot.configs;
 
-import com.mewna.catnip.Catnip;
 import lombok.Getter;
 import lombok.Setter;
 import org.javacord.api.DiscordApi;
@@ -20,10 +19,12 @@ public class DiscordConfig {
 
     DiscordApi api;
 
-    Catnip catnip;
-
     @PostConstruct
     private void Login() {
-        catnip = Catnip.catnip(token);
+        api = new DiscordApiBuilder()
+                .setToken(token)
+                .login().join();
+
+        System.out.println("Connected");
     }
 }

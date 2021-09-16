@@ -21,7 +21,7 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
-	implementation 'org.javacord:javacord:3.3.2'
+	implementation files('libs/javacord-3.4.0-SNAPSHOT-shaded.jar')
 	implementation 'com.mewna:catnip:3.2.0'
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
